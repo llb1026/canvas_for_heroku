@@ -1,0 +1,56 @@
+
+html, body { margin : 0px;
+    display:block;
+    width:  100%;
+    height: 100%;}
+
+canvas { margin : 0px;
+}
+
+canvasContainer { width: 100%;
+                    height: 100%; }
+
+#cv{
+    float:left;
+    background-image:url('../image/blackboard.jpg');
+    border-color: #000;
+}
+#peneraser{
+    margin-top: 5px;
+}
+
+#selectbar{
+    margin-top: 2px;
+    margin-left: 5%;
+}
+
+#anothers{
+    margin-left: 5%;
+}
+
+.wrap{
+    width: 100%; height: 100%;
+}
+.toolbar {
+    background: #f7f7f7;
+    background: -webkit-linear-gradient(#f7f7f7, #f1f1f1 80%);
+    background: -moz-linear-gradient(#f7f7f7, #f1f1f1 80%);
+    background: -o-linear-gradient(#f7f7f7, #f1f1f1 80%);
+    background: -ms-linear-gradient(#f7f7f7, #f1f1f1 80%);
+    background: linear-gradient(#f7f7f7, #f1f1f1 80%);
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+    padding-top: 4px;
+    width: 100%;
+    white-space: nowrap;
+    height: 32px;
+}
+.toolbar ul {
+    position: absolute;
+    list-style: none;
+    padding-right: 3px;
+    padding-left: 1px;
+    z-index: 2;
+    overflow: hidden;
+    float: left
+}

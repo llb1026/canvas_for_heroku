@@ -1,0 +1,75 @@
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>캔버스</title>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> <!--for draggable, resizable-->
+
+    <script>
+        $( function() {
+            $( "#image" ).draggable();
+            $( "#image" ).resizable();
+        } );
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/board.js"></script>
+
+    <style>
+        #image { width: 150px; height: 150px; background-color: aquamarine}
+    </style>
+
+    <!--script src="js/resize.js"></script-->
+
+    <!--
+    <script src="https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js"></script>
+    <script src ="https://rawgit.com/eligrey/canvas-toBlob.js/master/canvas-toBlob.js"></script>
+    <script>
+        function save_image(){
+            // Dump the canvas contents to a file.
+            var canvas = document.getElementById("cv");
+            canvas.toBlob(function(blob) {
+                saveAs(blob, "output.png");
+            }, "image/png");
+        };
+    </script>--> <!--save image for png jQuery-->
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+
+<div class="toolbar">
+
+    <div id ="peneraser" style="float:left">
+        <input type="radio" name ="tool" id='pen' value="pen" checked="on" onClick="tools(this.id);">PEN
+        <input type="radio" name ="tool" id='eraser' value="eraser" onClick="tools(this.id);">ERASER
+    </div>
+
+    <div id = "selectbar" style="float:left">
+        <select id = 'pen_color'> </select>
+        <select id = 'pen_width'> </select>
+    </div>
+
+    <div id = "anothers" style="float:left">
+        <input id = 'clear' type="image" src="image/buttons/clear.png" height="27px"/>
+
+        <!--button id = 'get' onClick="load();">get</button-->
+        <!--button id = 'save' onClick="save();">save</button-->
+
+        <!--a href="#" class="button" id="btn-download" download="#">Download</a-->
+
+        <input id = 'undo' type="image" src="image/buttons/undo.png" height="27px" onClick="cUndo();"/>
+        <input id = 'redo' type="image" src="image/buttons/redo.png" height="27px"  onClick="cRedo();"/>
+    </div>
+
+        <!--input type="file" id="getfile" accept="image/*"-->
+
+    </div>
+    <div id = 'canvasContainer'>
+        <canvas id='cv' width="100%" height="100%"></canvas>
+    </div>
+
+</body>
+</html>
